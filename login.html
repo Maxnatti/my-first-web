@@ -47,12 +47,21 @@
     <input type="tel" placeholder="เบอร์โทร">
     <input type="password" placeholder="รหัสผ่าน">
     <button onclick="login()">เข้าสู่ระบบ</button>
-  </div>
+  </div><script>
+  function login() {
+    const phone = document.querySelector('input[type="tel"]').value;
+    const password = document.querySelector('input[type="password"]').value;
 
-  <script>
-    function login() {
-      alert("เข้าสู่ระบบสำเร็จ (ตัวอย่าง)");
+    // ดึงข้อมูลที่สมัครไว้
+    const savedPhone = localStorage.getItem("phone");
+    const savedPass = localStorage.getItem("password");
+
+    if (phone === savedPhone && password === savedPass) {
+      window.location.href = "home.html";
+    } else {
+      alert("เบอร์หรือรหัสผ่านไม่ถูกต้อง");
     }
-  </script>
+  }
+</script>
 </body>
 </html>
