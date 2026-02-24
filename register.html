@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      background: #111;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial;
+    }
+    .card {
+      background: #222;
+      padding: 30px;
+      border-radius: 10px;
+      width: 300px;
+      color: white;
+      text-align: center;
+    }
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: none;
+      font-size: 16px;
+    }
+    button {
+      background: #00ff88;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>สมัครสมาชิก</h2>
+    <input type="tel" placeholder="เบอร์โทร">
+    <input type="password" placeholder="รหัสผ่าน">
+    <button onclick="register()">สมัครสมาชิก</button>
+  </div>
+
+  <script>
+    function register() {
+      const phone = document.querySelector('input[type="tel"]').value;
+      const password = document.querySelector('input[type="password"]').value;
+
+      localStorage.setItem("phone", phone);
+      localStorage.setItem("password", password);
+
+      alert("สมัครสำเร็จ!");
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>
